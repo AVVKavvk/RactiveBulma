@@ -1581,34 +1581,51 @@
             <ul>
               {{#each end_user_account_meta_tasks:key}}
                 <h1>
-                  <h3 class="is-size-5 account {{state === 'success' ? 'bg-success' : state === 'running' ? 'bg-warning' : state === 'failure' ? 'bg-danger' : state === 'started' ? 'bg-info' : 'bg-grey'}} "  on-click="@this.showPhase(key)">
-                   Account:  {{key}}
+                  <h3 
+                    class="is-size-5 account {{state === 'success' ? 'bg-success' : state === 'running' ? 'bg-warning' : state === 'failure' ? 'bg-danger' : 'bg-grey'}}"  
+                    on-mouseenter="@this.set('hoveredAccount', { key: key })"
+                    on-mouseleave="@this.set('hoveredAccount', null)"
+                    on-click="@this.showPhase(key)">
+    
+                    Account: {{key}}
+    
+                    <!-- Show the state when hovered -->
+                    {{#if hoveredAccount && hoveredAccount.key === key}}
+                      <span class="ml-2 is-size-6 has-text-info">-> {{state}}</span>
+                    {{/if}}
                   </h3>
+    
                   {{#if visiblePhases[key]}}
                     <ul>
                       {{#each phase_meta_tasks:phase}}
                         <li 
-                          class="phase {{state === 'success' ? 'bg-success' : state === 'running' ? 'bg-warning' : state === 'failure' ? 'bg-danger' : state === 'started' ? 'bg-info' : 'bg-grey'}} 
-                          is-rounded p-3 mb-3"
+                          class="phase {{state === 'success' ? 'bg-success' : state === 'running' ? 'bg-warning' : state === 'failure' ? 'bg-danger' : 'bg-grey'}} "
                           on-mouseenter="@this.set('hoveredPhase', { key: key, phase: phase })"
                           on-mouseleave="@this.set('hoveredPhase', null)"
                           on-click="@this.toggleServices(key, phase)">
-    
-                          <h4 class="is-size-6">
+        
+                          <h4 class="is-size-6 ">
                             {{phase}}
-    
+        
                             <!-- Show the state when hovered -->
                             {{#if hoveredPhase && hoveredPhase.key === key && hoveredPhase.phase === phase}}
-                              <span class="ml-2">(status: {{state}})</span>
+                              <span class="ml-2 is-size-6 has-text-info">-> {{state}}</span>
                             {{/if}}
                           </h4>
     
                           {{#if visibleServices[key][phase]}}
-                            <ul>
+                            <ul class="box" style="background:#a9aef4">
+                              <h1 class="is-size-4">Move Task Args :</h1>
+                              <li class="service is-rounded p-2 mb-2">
+                                <h5 class="is-size-5 has-text-grey-dark">request_id: {{move_task_args.request_id}}</h5>
+                              </li>
+                            </ul>
+                            <ul class="box" style="background:#a9aef4">
+                              <h1 class="is-size-4">Services :</h1>
                               {{#each services}}
                                 <li class="service is-rounded p-2 mb-2">
-                                  <h5 class="is-size-7">{{service_name}}</h5>
-                                  <p>{{host_name}}/{{path_prefix}}</p>
+                                  <h5 class="is-size-5 has-text-grey-dark">service: {{service_name}}</h5>
+                                  <p class="is-size-5">host: <a href="{{host_name}}" target="_blank" class="is-size-6"> {{host_name}}</a></p>  
                                 </li>
                               {{/each}}
                             </ul>
@@ -1629,7 +1646,8 @@
         end_user_account_meta_tasks: {},
         visiblePhases: {},
         visibleServices: {},
-        hoveredPhase: null  // Track hovered phase
+        hoveredPhase: null,
+        hoveredAccount: null  // Track hovered account
       },
       showPhase(key) {
         const visiblePhases = this.get('visiblePhases');
@@ -1652,7 +1670,6 @@
     
     // Set data to Ractive
     ractive.set('end_user_account_meta_tasks', customdata.end_user_account_meta_tasks);
-    
     
     
   </script>
