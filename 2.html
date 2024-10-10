@@ -11,12 +11,12 @@
             cursor: pointer;
         }
         .phase {
-            margin-left: 1rem;
+            margin-left: 2rem;
             margin-bottom: 1rem;
             cursor: pointer;
         }
         .service {
-            margin-left: 2rem;
+            margin-left: 6rem;
             margin-bottom: 0.5rem;
             cursor: pointer;
         }
@@ -52,14 +52,14 @@
       }
       
       .bg-info {
-        background-color: #6e7071; 
+        background-color: #b1b5b6; 
         border-radius: 10px;
         padding: 10px;
         margin-bottom: 10px;
       }
       
       .bg-grey {
-        background-color: #616466;
+        background-color: #9ea2a4;
         border-radius: 10px;
         padding: 10px;
         margin-bottom: 10px;
@@ -901,7 +901,7 @@
                   "phase": "preMove",
                   "svc_host_url": "https://nexus.test-3269.eencloud.com",
                   "state": "",
-                  "svc_status": "",
+                  "svc_status": "running",
                   "signature": {
                     "uuid": "87f23626-5e83-48f2-aa9a-44a97f440ae5",
                     "name": "esn_based_move",
@@ -1016,7 +1016,7 @@
                   "phase": "preMove",
                   "svc_host_url": "https://nexus.test-3269.eencloud.com",
                   "state": "",
-                  "svc_status": "",
+                  "svc_status": "running",
                   "signature": {
                     "uuid": "c43ce12b-f35a-4096-9aa5-af7e145e5606",
                     "name": "account_based_move",
@@ -1457,7 +1457,7 @@
                   "phase": "move",
                   "svc_host_url": "https://nexus.test-3269.eencloud.com",
                   "state": "",
-                  "svc_status": "",
+                  "svc_status": "success",
                   "signature": {
                     "uuid": "412f9a9a-fcd9-4f01-84c3-acd06e1137d0",
                     "name": "account_based_move",
@@ -1583,40 +1583,46 @@
                 <h1>
                   <h3 
                     class="is-size-5 account {{state === 'success' ? 'bg-success' : state === 'running' ? 'bg-warning' : state === 'failure' ? 'bg-danger' : 'bg-grey'}}"  
-                    on-mouseenter="@this.set('hoveredAccount', { key: key })"
-                    on-mouseleave="@this.set('hoveredAccount', null)"
                     on-click="@this.showPhase(key)">
-    
+        
                     Account: {{key}}
                     <span class="ml-2 is-size-6 has-text-info is-pulled-right">{{state}}</span>
-
-                  </h3>
     
+                  </h3>
+        
                   {{#if visiblePhases[key]}}
                     <ul>
                       {{#each phase_meta_tasks:phase}}
                         <li 
                           class="phase {{state === 'success' ? 'bg-success' : state === 'running' ? 'bg-warning' : state === 'failure' ? 'bg-danger' : 'bg-grey'}} "
                           on-click="@this.toggleServices(key, phase)">
-        
+          
                           <h4 class="is-size-6 ">
                             {{phase}}
                             <span class="ml-2 is-size-6 has-text-info is-pulled-right">{{state}}</span>
                           </h4>
     
-                          {{#if visibleServices[key][phase]}}
-
-                            <ul class="box" style="background:#a9aef4">
-                              <h1 class="is-size-4">Services :</h1>
-                              {{#each services}}
-                                <li class="service is-rounded p-2 mb-2">
-                                  <h5 class="is-size-5 has-text-grey-dark">service: {{service_name}}</h5>
-                                  <p class="is-size-5">host: <a href="{{host_name}}" target="_blank" class="is-size-6"> {{host_name}}</a></p>  
-                                </li>
-                              {{/each}}
-                            </ul>
-                          {{/if}}
                         </li>
+                        {{#if visibleServices[key][phase]}}
+                            <h1 class="is-size-5 has-text-centered">Move Phase Tasks :</h1>
+                            {{#each move_phase_tasks:service}}
+                              <li class="service is-rounded p-2 mb-2 {{svc_status === 'success' ? 'bg-success' : svc_status === 'running' ? 'bg-warning' : svc_status === 'failure' ? 'bg-danger' : 'bg-grey'}}" on-click="@this.toggleServiceDetails(key, phase, service)">
+                                <h5 class="is-size-5 has-text-grey-dark ">
+                                  {{service}}
+                                  <span class="ml-2 is-size-6 has-text-info is-pulled-right">{{svc_status}}</span>
+                                </h5>
+    
+                                {{#if visibleServiceDetails[key][phase][service]}}
+                                  <div class="service-details">
+                                    <p class="is-size-5">host: <a href="{{host_name}}" target="_blank" class="is-size-6">{{host_name}}</a></p>  
+                                    <!-- Add any additional service details you want to show here -->
+                                    <p class="is-size-6">Additional info: {{additional_info}}</p>
+                                  </div>
+                                {{/if}}
+                              </li>
+                            {{/each}}
+
+                        {{/if}}
                       {{/each}}
                     </ul>
                   {{/if}}
@@ -1632,14 +1638,13 @@
         end_user_account_meta_tasks: {},
         visiblePhases: {},
         visibleServices: {},
-        hoveredPhase: null,
-        hoveredAccount: null  // Track hovered account
+        visibleServiceDetails: {},
       },
       showPhase(key) {
         const visiblePhases = this.get('visiblePhases');
         visiblePhases[key] = !visiblePhases[key];
         this.set('visiblePhases', visiblePhases);
-    
+        
         if (!this.get('visibleServices')[key]) {
           this.set('visibleServices', { ...this.get('visibleServices'), [key]: {} });
         }
@@ -1651,11 +1656,27 @@
         }
         visibleServices[key][phase] = !visibleServices[key][phase];
         this.set('visibleServices', visibleServices);
+      },
+      toggleServiceDetails(key, phase, service_index) {
+        const visibleServiceDetails = this.get('visibleServiceDetails');
+        
+        if (!visibleServiceDetails[key]) {
+          visibleServiceDetails[key] = {};
+        }
+        
+        if (!visibleServiceDetails[key][phase]) {
+          visibleServiceDetails[key][phase] = {};
+        }
+    
+        visibleServiceDetails[key][phase][service_index] = !visibleServiceDetails[key][phase][service_index];
+        this.set('visibleServiceDetails', visibleServiceDetails);
       }
     });
     
     // Set data to Ractive
     ractive.set('end_user_account_meta_tasks', customdata.end_user_account_meta_tasks);
+    
+    
     
     
   </script>
