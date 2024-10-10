@@ -20,6 +20,54 @@
             margin-bottom: 0.5rem;
             cursor: pointer;
         }
+        .bg-success {
+          background-color: #28a745;
+      }
+      
+      li {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+      
+      .bg-success {
+        background-color: #59e078; 
+        border-radius: 10px;
+        padding: 10px;
+        margin-bottom: 10px;
+      }
+      
+      .bg-warning {
+        background-color: #e1c05b; 
+        border-radius: 10px;
+        padding: 10px;
+        margin-bottom: 10px;
+      }
+      
+      .bg-danger {
+        background-color: #e12638; 
+        border-radius: 10px;
+        padding: 10px;
+        margin-bottom: 10px;
+      }
+      
+      .bg-info {
+        background-color: #6e7071; 
+        border-radius: 10px;
+        padding: 10px;
+        margin-bottom: 10px;
+      }
+      
+      .bg-grey {
+        background-color: #616466;
+        border-radius: 10px;
+        padding: 10px;
+        margin-bottom: 10px;
+      }
+      .account:hover {
+        cursor: pointer;
+      }
+  
     </style>
 </head>
 <body>
@@ -32,7 +80,6 @@
       <div id="data-logger" class="box">
           <!-- Data will be displayed or logged here -->
       </div>
-      <button id="logButton" class="button is-primary">Log Data</button>
   </div>
 </section>
 <script src="https://cdn.jsdelivr.net/npm/ractive"></script>
@@ -86,6 +133,725 @@
       },
       "end_user_account_meta_tasks": {
         "00167857": {
+          "request_id": "a4de2303-92fa-4335-93a4-05dfa92e3b6d",
+          "end_user_account_id": "00167857",
+          "end_user_account_meta_id": "131f1fa6-b44b-4edc-ae7f-6f91d3b0735d",
+          "state": "running",
+          "current_phase": "move",
+          "phase_meta_tasks": {
+            "preMove": {
+              "request_id": "a4de2303-92fa-4335-93a4-05dfa92e3b6d",
+              "phase_meta_id": "51d9a7aa-4e84-4021-9446-331d335f9906",
+              "end_user_account_meta_id": "131f1fa6-b44b-4edc-ae7f-6f91d3b0735d",
+              "phase": "preMove",
+              "state": "success",
+              "move_task_args": {
+                "request_id": "a4de2303-92fa-4335-93a4-05dfa92e3b6d",
+                "src_account_id": "00167857",
+                "dest_account_id": "00167856",
+                "src_pod": "nrt1p1",
+                "dest_pod": "aus1p3",
+                "src_cluster": "c006",
+                "dest_cluster": "c012",
+                "phase": "preMove",
+                "move_type": "podMove",
+                "grace_period_days": 10
+              },
+              "services": [
+                {
+                  "service_name": "drivefs",
+                  "host_name": "https://nexus.test-3269.eencloud.com",
+                  "path_prefix": "api/v2/Debug/internal",
+                  "service_type": "accountBased"
+                },
+                {
+                  "service_name": "dhash",
+                  "host_name": "https://nexus.test-3269.eencloud.com",
+                  "path_prefix": "api/v2/Debug/internal",
+                  "service_type": "esnBased"
+                }
+              ],
+              "move_phase_tasks": {
+                "dhash": {
+                  "request_id": "a4de2303-92fa-4335-93a4-05dfa92e3b6d",
+                  "_id": "87f23626-5e83-48f2-aa9a-44a97f440ae5",
+                  "phase_meta_id": "51d9a7aa-4e84-4021-9446-331d335f9906",
+                  "end_user_account_id": "00167857",
+                  "esn_based": true,
+                  "name": "dhash",
+                  "phase": "preMove",
+                  "svc_host_url": "https://nexus.test-3269.eencloud.com",
+                  "state": "",
+                  "svc_status": "",
+                  "signature": {
+                    "uuid": "87f23626-5e83-48f2-aa9a-44a97f440ae5",
+                    "name": "esn_based_move",
+                    "routingkey": "",
+                    "eta": null,
+                    "groupuuid": "",
+                    "grouptaskcount": 0,
+                    "args": [
+                      {
+                        "name": "",
+                        "type": "string",
+                        "value": "87f23626-5e83-48f2-aa9a-44a97f440ae5"
+                      },
+                      {
+                        "name": "",
+                        "type": "string",
+                        "value": "a4de2303-92fa-4335-93a4-05dfa92e3b6d"
+                      },
+                      {
+                        "name": "",
+                        "type": "string",
+                        "value": "https://nexus.test-3269.eencloud.com"
+                      },
+                      {
+                        "name": "",
+                        "type": "string",
+                        "value": "api/v2/Debug/internal"
+                      },
+                      {
+                        "name": "",
+                        "type": "string",
+                        "value": "esnBased"
+                      },
+                      {
+                        "name": "",
+                        "type": "string",
+                        "value": "podMove"
+                      },
+                      {
+                        "name": "",
+                        "type": "string",
+                        "value": "00167857"
+                      },
+                      {
+                        "name": "",
+                        "type": "string",
+                        "value": "00167856"
+                      },
+                      {
+                        "name": "",
+                        "type": "string",
+                        "value": "nrt1p1"
+                      },
+                      {
+                        "name": "",
+                        "type": "string",
+                        "value": "aus1p3"
+                      },
+                      {
+                        "name": "",
+                        "type": "string",
+                        "value": "c006"
+                      },
+                      {
+                        "name": "",
+                        "type": "string",
+                        "value": "c012"
+                      },
+                      {
+                        "name": "",
+                        "type": "string",
+                        "value": "preMove"
+                      },
+                      {
+                        "name": "",
+                        "type": "int64",
+                        "value": 10
+                      }
+                    ],
+                    "headers": {},
+                    "priority": 0,
+                    "immutable": false,
+                    "retrycount": 0,
+                    "retrytimeout": 0,
+                    "onsuccess": [],
+                    "onerror": [],
+                    "chordcallback": null,
+                    "brokermessagegroupid": "",
+                    "sqsreceipthandle": "",
+                    "stoptaskdeletiononerror": false,
+                    "ignorewhentasknotregistered": false
+                  },
+                  "results": [],
+                  "created_at": "0001-01-01T00:00:00Z",
+                  "progress": 0,
+                  "queue_time": "2024-10-08T07:21:31.109Z",
+                  "start_time": "0001-01-01T00:00:00Z",
+                  "total_esn_count": 3,
+                  "moved_esn_count": 0,
+                  "moved_esns": [],
+                  "failed_esns": [],
+                  "end_time": "0001-01-01T00:00:00Z",
+                  "p_status_updated_at": "0001-01-01T00:00:00Z"
+                },
+                "drivefs": {
+                  "request_id": "a4de2303-92fa-4335-93a4-05dfa92e3b6d",
+                  "_id": "c43ce12b-f35a-4096-9aa5-af7e145e5606",
+                  "phase_meta_id": "51d9a7aa-4e84-4021-9446-331d335f9906",
+                  "end_user_account_id": "00167857",
+                  "esn_based": false,
+                  "name": "drivefs",
+                  "phase": "preMove",
+                  "svc_host_url": "https://nexus.test-3269.eencloud.com",
+                  "state": "",
+                  "svc_status": "",
+                  "signature": {
+                    "uuid": "c43ce12b-f35a-4096-9aa5-af7e145e5606",
+                    "name": "account_based_move",
+                    "routingkey": "",
+                    "eta": null,
+                    "groupuuid": "",
+                    "grouptaskcount": 0,
+                    "args": [
+                      {
+                        "name": "",
+                        "type": "string",
+                        "value": "c43ce12b-f35a-4096-9aa5-af7e145e5606"
+                      },
+                      {
+                        "name": "",
+                        "type": "string",
+                        "value": "a4de2303-92fa-4335-93a4-05dfa92e3b6d"
+                      },
+                      {
+                        "name": "",
+                        "type": "string",
+                        "value": "https://nexus.test-3269.eencloud.com"
+                      },
+                      {
+                        "name": "",
+                        "type": "string",
+                        "value": "api/v2/Debug/internal"
+                      },
+                      {
+                        "name": "",
+                        "type": "string",
+                        "value": "accountBased"
+                      },
+                      {
+                        "name": "",
+                        "type": "string",
+                        "value": "podMove"
+                      },
+                      {
+                        "name": "",
+                        "type": "string",
+                        "value": "00167857"
+                      },
+                      {
+                        "name": "",
+                        "type": "string",
+                        "value": "00167856"
+                      },
+                      {
+                        "name": "",
+                        "type": "string",
+                        "value": "nrt1p1"
+                      },
+                      {
+                        "name": "",
+                        "type": "string",
+                        "value": "aus1p3"
+                      },
+                      {
+                        "name": "",
+                        "type": "string",
+                        "value": "c006"
+                      },
+                      {
+                        "name": "",
+                        "type": "string",
+                        "value": "c012"
+                      },
+                      {
+                        "name": "",
+                        "type": "string",
+                        "value": "preMove"
+                      },
+                      {
+                        "name": "",
+                        "type": "int64",
+                        "value": 10
+                      }
+                    ],
+                    "headers": {},
+                    "priority": 0,
+                    "immutable": false,
+                    "retrycount": 0,
+                    "retrytimeout": 0,
+                    "onsuccess": [],
+                    "onerror": [],
+                    "chordcallback": null,
+                    "brokermessagegroupid": "",
+                    "sqsreceipthandle": "",
+                    "stoptaskdeletiononerror": false,
+                    "ignorewhentasknotregistered": false
+                  },
+                  "results": [],
+                  "created_at": "0001-01-01T00:00:00Z",
+                  "progress": 0,
+                  "queue_time": "2024-10-08T07:21:31.141Z",
+                  "start_time": "0001-01-01T00:00:00Z",
+                  "total_esn_count": 0,
+                  "moved_esn_count": 0,
+                  "moved_esns": [],
+                  "failed_esns": [],
+                  "end_time": "0001-01-01T00:00:00Z",
+                  "p_status_updated_at": "0001-01-01T00:00:00Z"
+                }
+              },
+              "queue_time": "2024-10-08T07:21:31.109Z",
+              "start_time": "2024-10-08T07:21:31.144Z",
+              "end_time": "2024-10-08T07:22:02.399Z"
+            },
+            "transition": {
+              "request_id": "a4de2303-92fa-4335-93a4-05dfa92e3b6d",
+              "phase_meta_id": "01f0f4f3-1714-45b2-851d-dbb3add3e28d",
+              "end_user_account_meta_id": "131f1fa6-b44b-4edc-ae7f-6f91d3b0735d",
+              "phase": "transition",
+              "state": "success",
+              "move_task_args": {
+                "request_id": "a4de2303-92fa-4335-93a4-05dfa92e3b6d",
+                "src_account_id": "00167857",
+                "dest_account_id": "00167856",
+                "src_pod": "nrt1p1",
+                "dest_pod": "aus1p3",
+                "src_cluster": "c006",
+                "dest_cluster": "c012",
+                "phase": "transition",
+                "move_type": "podMove",
+                "grace_period_days": 10
+              },
+              "services": [
+                {
+                  "service_name": "dhash",
+                  "host_name": "https://nexus.test-3269.eencloud.com",
+                  "path_prefix": "api/v2/Debug/internal",
+                  "service_type": "esnBased"
+                }
+              ],
+              "move_phase_tasks": {
+                "dhash": {
+                  "request_id": "a4de2303-92fa-4335-93a4-05dfa92e3b6d",
+                  "_id": "5dbbcfa9-349c-4525-8b8d-9b1b744f3ed5",
+                  "phase_meta_id": "01f0f4f3-1714-45b2-851d-dbb3add3e28d",
+                  "end_user_account_id": "00167857",
+                  "esn_based": true,
+                  "name": "dhash",
+                  "phase": "transition",
+                  "svc_host_url": "https://nexus.test-3269.eencloud.com",
+                  "state": "",
+                  "svc_status": "",
+                  "signature": {
+                    "uuid": "5dbbcfa9-349c-4525-8b8d-9b1b744f3ed5",
+                    "name": "esn_based_move",
+                    "routingkey": "",
+                    "eta": null,
+                    "groupuuid": "",
+                    "grouptaskcount": 0,
+                    "args": [
+                      {
+                        "name": "",
+                        "type": "string",
+                        "value": "5dbbcfa9-349c-4525-8b8d-9b1b744f3ed5"
+                      },
+                      {
+                        "name": "",
+                        "type": "string",
+                        "value": "a4de2303-92fa-4335-93a4-05dfa92e3b6d"
+                      },
+                      {
+                        "name": "",
+                        "type": "string",
+                        "value": "https://nexus.test-3269.eencloud.com"
+                      },
+                      {
+                        "name": "",
+                        "type": "string",
+                        "value": "api/v2/Debug/internal"
+                      },
+                      {
+                        "name": "",
+                        "type": "string",
+                        "value": "esnBased"
+                      },
+                      {
+                        "name": "",
+                        "type": "string",
+                        "value": "podMove"
+                      },
+                      {
+                        "name": "",
+                        "type": "string",
+                        "value": "00167857"
+                      },
+                      {
+                        "name": "",
+                        "type": "string",
+                        "value": "00167856"
+                      },
+                      {
+                        "name": "",
+                        "type": "string",
+                        "value": "nrt1p1"
+                      },
+                      {
+                        "name": "",
+                        "type": "string",
+                        "value": "aus1p3"
+                      },
+                      {
+                        "name": "",
+                        "type": "string",
+                        "value": "c006"
+                      },
+                      {
+                        "name": "",
+                        "type": "string",
+                        "value": "c012"
+                      },
+                      {
+                        "name": "",
+                        "type": "string",
+                        "value": "transition"
+                      },
+                      {
+                        "name": "",
+                        "type": "int64",
+                        "value": 10
+                      }
+                    ],
+                    "headers": {},
+                    "priority": 0,
+                    "immutable": false,
+                    "retrycount": 0,
+                    "retrytimeout": 0,
+                    "onsuccess": [],
+                    "onerror": [],
+                    "chordcallback": null,
+                    "brokermessagegroupid": "",
+                    "sqsreceipthandle": "",
+                    "stoptaskdeletiononerror": false,
+                    "ignorewhentasknotregistered": false
+                  },
+                  "results": [],
+                  "created_at": "0001-01-01T00:00:00Z",
+                  "progress": 0,
+                  "queue_time": "2024-10-08T07:21:31.142Z",
+                  "start_time": "0001-01-01T00:00:00Z",
+                  "total_esn_count": 3,
+                  "moved_esn_count": 0,
+                  "moved_esns": [],
+                  "failed_esns": [],
+                  "end_time": "0001-01-01T00:00:00Z",
+                  "p_status_updated_at": "0001-01-01T00:00:00Z"
+                }
+              },
+              "queue_time": "2024-10-08T07:21:31.142Z",
+              "start_time": "2024-10-08T07:22:02.399Z",
+              "end_time": "2024-10-08T07:22:27.443Z"
+            },
+            "postMove": {
+              "request_id": "a4de2303-92fa-4335-93a4-05dfa92e3b6d",
+              "phase_meta_id": "b6c4d4ce-18e1-44e3-88dc-7ac3237d310f",
+              "end_user_account_meta_id": "131f1fa6-b44b-4edc-ae7f-6f91d3b0735d",
+              "phase": "postMove",
+              "state": "running",
+              "move_task_args": {
+                "request_id": "a4de2303-92fa-4335-93a4-05dfa92e3b6d",
+                "src_account_id": "00167857",
+                "dest_account_id": "00167856",
+                "src_pod": "nrt1p1",
+                "dest_pod": "aus1p3",
+                "src_cluster": "c006",
+                "dest_cluster": "c012",
+                "phase": "postMove",
+                "move_type": "podMove",
+                "grace_period_days": 10
+              },
+              "services": [
+                {
+                  "service_name": "dhash",
+                  "host_name": "https://nexus.test-3269.eencloud.com",
+                  "path_prefix": "api/v2/Debug/internal",
+                  "service_type": "esnBased"
+                }
+              ],
+              "move_phase_tasks": {
+                "dhash": {
+                  "request_id": "a4de2303-92fa-4335-93a4-05dfa92e3b6d",
+                  "_id": "0cd5e411-be7d-4f55-a1f0-030c8bf61f9f",
+                  "phase_meta_id": "b6c4d4ce-18e1-44e3-88dc-7ac3237d310f",
+                  "end_user_account_id": "00167857",
+                  "esn_based": true,
+                  "name": "dhash",
+                  "phase": "postMove",
+                  "svc_host_url": "https://nexus.test-3269.eencloud.com",
+                  "state": "",
+                  "svc_status": "",
+                  "signature": {
+                    "uuid": "0cd5e411-be7d-4f55-a1f0-030c8bf61f9f",
+                    "name": "esn_based_move",
+                    "routingkey": "",
+                    "eta": null,
+                    "groupuuid": "",
+                    "grouptaskcount": 0,
+                    "args": [
+                      {
+                        "name": "",
+                        "type": "string",
+                        "value": "0cd5e411-be7d-4f55-a1f0-030c8bf61f9f"
+                      },
+                      {
+                        "name": "",
+                        "type": "string",
+                        "value": "a4de2303-92fa-4335-93a4-05dfa92e3b6d"
+                      },
+                      {
+                        "name": "",
+                        "type": "string",
+                        "value": "https://nexus.test-3269.eencloud.com"
+                      },
+                      {
+                        "name": "",
+                        "type": "string",
+                        "value": "api/v2/Debug/internal"
+                      },
+                      {
+                        "name": "",
+                        "type": "string",
+                        "value": "esnBased"
+                      },
+                      {
+                        "name": "",
+                        "type": "string",
+                        "value": "podMove"
+                      },
+                      {
+                        "name": "",
+                        "type": "string",
+                        "value": "00167857"
+                      },
+                      {
+                        "name": "",
+                        "type": "string",
+                        "value": "00167856"
+                      },
+                      {
+                        "name": "",
+                        "type": "string",
+                        "value": "nrt1p1"
+                      },
+                      {
+                        "name": "",
+                        "type": "string",
+                        "value": "aus1p3"
+                      },
+                      {
+                        "name": "",
+                        "type": "string",
+                        "value": "c006"
+                      },
+                      {
+                        "name": "",
+                        "type": "string",
+                        "value": "c012"
+                      },
+                      {
+                        "name": "",
+                        "type": "string",
+                        "value": "postMove"
+                      },
+                      {
+                        "name": "",
+                        "type": "int64",
+                        "value": 10
+                      }
+                    ],
+                    "headers": {},
+                    "priority": 0,
+                    "immutable": false,
+                    "retrycount": 0,
+                    "retrytimeout": 0,
+                    "onsuccess": [],
+                    "onerror": [],
+                    "chordcallback": null,
+                    "brokermessagegroupid": "",
+                    "sqsreceipthandle": "",
+                    "stoptaskdeletiononerror": false,
+                    "ignorewhentasknotregistered": false
+                  },
+                  "results": [],
+                  "created_at": "0001-01-01T00:00:00Z",
+                  "progress": 0,
+                  "queue_time": "2024-10-08T07:21:31.142Z",
+                  "start_time": "0001-01-01T00:00:00Z",
+                  "total_esn_count": 3,
+                  "moved_esn_count": 0,
+                  "moved_esns": [],
+                  "failed_esns": [],
+                  "end_time": "0001-01-01T00:00:00Z",
+                  "p_status_updated_at": "0001-01-01T00:00:00Z"
+                }
+              },
+              "queue_time": "2024-10-08T07:21:31.142Z",
+              "start_time": "2024-10-08T07:22:27.443Z",
+              "end_time": "2024-10-08T07:22:59.501Z"
+            },
+            "move": {
+              "request_id": "a4de2303-92fa-4335-93a4-05dfa92e3b6d",
+              "phase_meta_id": "7dc5bab1-6229-4727-b889-445798a89b29",
+              "end_user_account_meta_id": "131f1fa6-b44b-4edc-ae7f-6f91d3b0735d",
+              "phase": "move",
+              "state": "started",
+              "move_task_args": {
+                "request_id": "a4de2303-92fa-4335-93a4-05dfa92e3b6d",
+                "src_account_id": "00167857",
+                "dest_account_id": "00167856",
+                "src_pod": "nrt1p1",
+                "dest_pod": "aus1p3",
+                "src_cluster": "c006",
+                "dest_cluster": "c012",
+                "phase": "move",
+                "move_type": "podMove",
+                "grace_period_days": 10
+              },
+              "services": [
+                {
+                  "service_name": "drivefs",
+                  "host_name": "https://nexus.test-3269.eencloud.com",
+                  "path_prefix": "api/v2/Debug/internal",
+                  "service_type": "accountBased"
+                }
+              ],
+              "move_phase_tasks": {
+                "drivefs": {
+                  "request_id": "a4de2303-92fa-4335-93a4-05dfa92e3b6d",
+                  "_id": "412f9a9a-fcd9-4f01-84c3-acd06e1137d0",
+                  "phase_meta_id": "7dc5bab1-6229-4727-b889-445798a89b29",
+                  "end_user_account_id": "00167857",
+                  "esn_based": false,
+                  "name": "drivefs",
+                  "phase": "move",
+                  "svc_host_url": "https://nexus.test-3269.eencloud.com",
+                  "state": "",
+                  "svc_status": "",
+                  "signature": {
+                    "uuid": "412f9a9a-fcd9-4f01-84c3-acd06e1137d0",
+                    "name": "account_based_move",
+                    "routingkey": "",
+                    "eta": null,
+                    "groupuuid": "",
+                    "grouptaskcount": 0,
+                    "args": [
+                      {
+                        "name": "",
+                        "type": "string",
+                        "value": "412f9a9a-fcd9-4f01-84c3-acd06e1137d0"
+                      },
+                      {
+                        "name": "",
+                        "type": "string",
+                        "value": "a4de2303-92fa-4335-93a4-05dfa92e3b6d"
+                      },
+                      {
+                        "name": "",
+                        "type": "string",
+                        "value": "https://nexus.test-3269.eencloud.com"
+                      },
+                      {
+                        "name": "",
+                        "type": "string",
+                        "value": "api/v2/Debug/internal"
+                      },
+                      {
+                        "name": "",
+                        "type": "string",
+                        "value": "accountBased"
+                      },
+                      {
+                        "name": "",
+                        "type": "string",
+                        "value": "podMove"
+                      },
+                      {
+                        "name": "",
+                        "type": "string",
+                        "value": "00167857"
+                      },
+                      {
+                        "name": "",
+                        "type": "string",
+                        "value": "00167856"
+                      },
+                      {
+                        "name": "",
+                        "type": "string",
+                        "value": "nrt1p1"
+                      },
+                      {
+                        "name": "",
+                        "type": "string",
+                        "value": "aus1p3"
+                      },
+                      {
+                        "name": "",
+                        "type": "string",
+                        "value": "c006"
+                      },
+                      {
+                        "name": "",
+                        "type": "string",
+                        "value": "c012"
+                      },
+                      {
+                        "name": "",
+                        "type": "string",
+                        "value": "move"
+                      },
+                      {
+                        "name": "",
+                        "type": "int64",
+                        "value": 10
+                      }
+                    ],
+                    "headers": {},
+                    "priority": 0,
+                    "immutable": false,
+                    "retrycount": 0,
+                    "retrytimeout": 0,
+                    "onsuccess": [],
+                    "onerror": [],
+                    "chordcallback": null,
+                    "brokermessagegroupid": "",
+                    "sqsreceipthandle": "",
+                    "stoptaskdeletiononerror": false,
+                    "ignorewhentasknotregistered": false
+                  },
+                  "results": [],
+                  "created_at": "0001-01-01T00:00:00Z",
+                  "progress": 0,
+                  "queue_time": "2024-10-08T07:21:31.143Z",
+                  "start_time": "0001-01-01T00:00:00Z",
+                  "total_esn_count": 0,
+                  "moved_esn_count": 0,
+                  "moved_esns": [],
+                  "failed_esns": [],
+                  "end_time": "0001-01-01T00:00:00Z",
+                  "p_status_updated_at": "0001-01-01T00:00:00Z"
+                }
+              },
+              "queue_time": "2024-10-08T07:21:31.143Z",
+              "start_time": "2024-10-08T07:22:59.501Z",
+              "end_time": "2024-10-08T07:23:11.523Z"
+            }
+          }
+        }
+      ,
+        "00167856": {
           "request_id": "a4de2303-92fa-4335-93a4-05dfa92e3b6d",
           "end_user_account_id": "00167857",
           "end_user_account_meta_id": "131f1fa6-b44b-4edc-ae7f-6f91d3b0735d",
@@ -659,726 +1425,7 @@
               "phase_meta_id": "7dc5bab1-6229-4727-b889-445798a89b29",
               "end_user_account_meta_id": "131f1fa6-b44b-4edc-ae7f-6f91d3b0735d",
               "phase": "move",
-              "state": "started",
-              "move_task_args": {
-                "request_id": "a4de2303-92fa-4335-93a4-05dfa92e3b6d",
-                "src_account_id": "00167857",
-                "dest_account_id": "00167856",
-                "src_pod": "nrt1p1",
-                "dest_pod": "aus1p3",
-                "src_cluster": "c006",
-                "dest_cluster": "c012",
-                "phase": "move",
-                "move_type": "podMove",
-                "grace_period_days": 10
-              },
-              "services": [
-                {
-                  "service_name": "drivefs",
-                  "host_name": "https://nexus.test-3269.eencloud.com",
-                  "path_prefix": "api/v2/Debug/internal",
-                  "service_type": "accountBased"
-                }
-              ],
-              "move_phase_tasks": {
-                "drivefs": {
-                  "request_id": "a4de2303-92fa-4335-93a4-05dfa92e3b6d",
-                  "_id": "412f9a9a-fcd9-4f01-84c3-acd06e1137d0",
-                  "phase_meta_id": "7dc5bab1-6229-4727-b889-445798a89b29",
-                  "end_user_account_id": "00167857",
-                  "esn_based": false,
-                  "name": "drivefs",
-                  "phase": "move",
-                  "svc_host_url": "https://nexus.test-3269.eencloud.com",
-                  "state": "",
-                  "svc_status": "",
-                  "signature": {
-                    "uuid": "412f9a9a-fcd9-4f01-84c3-acd06e1137d0",
-                    "name": "account_based_move",
-                    "routingkey": "",
-                    "eta": null,
-                    "groupuuid": "",
-                    "grouptaskcount": 0,
-                    "args": [
-                      {
-                        "name": "",
-                        "type": "string",
-                        "value": "412f9a9a-fcd9-4f01-84c3-acd06e1137d0"
-                      },
-                      {
-                        "name": "",
-                        "type": "string",
-                        "value": "a4de2303-92fa-4335-93a4-05dfa92e3b6d"
-                      },
-                      {
-                        "name": "",
-                        "type": "string",
-                        "value": "https://nexus.test-3269.eencloud.com"
-                      },
-                      {
-                        "name": "",
-                        "type": "string",
-                        "value": "api/v2/Debug/internal"
-                      },
-                      {
-                        "name": "",
-                        "type": "string",
-                        "value": "accountBased"
-                      },
-                      {
-                        "name": "",
-                        "type": "string",
-                        "value": "podMove"
-                      },
-                      {
-                        "name": "",
-                        "type": "string",
-                        "value": "00167857"
-                      },
-                      {
-                        "name": "",
-                        "type": "string",
-                        "value": "00167856"
-                      },
-                      {
-                        "name": "",
-                        "type": "string",
-                        "value": "nrt1p1"
-                      },
-                      {
-                        "name": "",
-                        "type": "string",
-                        "value": "aus1p3"
-                      },
-                      {
-                        "name": "",
-                        "type": "string",
-                        "value": "c006"
-                      },
-                      {
-                        "name": "",
-                        "type": "string",
-                        "value": "c012"
-                      },
-                      {
-                        "name": "",
-                        "type": "string",
-                        "value": "move"
-                      },
-                      {
-                        "name": "",
-                        "type": "int64",
-                        "value": 10
-                      }
-                    ],
-                    "headers": {},
-                    "priority": 0,
-                    "immutable": false,
-                    "retrycount": 0,
-                    "retrytimeout": 0,
-                    "onsuccess": [],
-                    "onerror": [],
-                    "chordcallback": null,
-                    "brokermessagegroupid": "",
-                    "sqsreceipthandle": "",
-                    "stoptaskdeletiononerror": false,
-                    "ignorewhentasknotregistered": false
-                  },
-                  "results": [],
-                  "created_at": "0001-01-01T00:00:00Z",
-                  "progress": 0,
-                  "queue_time": "2024-10-08T07:21:31.143Z",
-                  "start_time": "0001-01-01T00:00:00Z",
-                  "total_esn_count": 0,
-                  "moved_esn_count": 0,
-                  "moved_esns": [],
-                  "failed_esns": [],
-                  "end_time": "0001-01-01T00:00:00Z",
-                  "p_status_updated_at": "0001-01-01T00:00:00Z"
-                }
-              },
-              "queue_time": "2024-10-08T07:21:31.143Z",
-              "start_time": "2024-10-08T07:22:59.501Z",
-              "end_time": "2024-10-08T07:23:11.523Z"
-            }
-          }
-        }
-      ,
-        "00167856": {
-          "request_id": "a4de2303-92fa-4335-93a4-05dfa92e3b6d",
-          "end_user_account_id": "00167857",
-          "end_user_account_meta_id": "131f1fa6-b44b-4edc-ae7f-6f91d3b0735d",
-          "state": "succes",
-          "current_phase": "move",
-          "phase_meta_tasks": {
-            "preMove": {
-              "request_id": "a4de2303-92fa-4335-93a4-05dfa92e3b6d",
-              "phase_meta_id": "51d9a7aa-4e84-4021-9446-331d335f9906",
-              "end_user_account_meta_id": "131f1fa6-b44b-4edc-ae7f-6f91d3b0735d",
-              "phase": "preMove",
               "state": "success",
-              "move_task_args": {
-                "request_id": "a4de2303-92fa-4335-93a4-05dfa92e3b6d",
-                "src_account_id": "00167857",
-                "dest_account_id": "00167856",
-                "src_pod": "nrt1p1",
-                "dest_pod": "aus1p3",
-                "src_cluster": "c006",
-                "dest_cluster": "c012",
-                "phase": "preMove",
-                "move_type": "podMove",
-                "grace_period_days": 10
-              },
-              "services": [
-                {
-                  "service_name": "drivefs",
-                  "host_name": "https://nexus.test-3269.eencloud.com",
-                  "path_prefix": "api/v2/Debug/internal",
-                  "service_type": "accountBased"
-                },
-                {
-                  "service_name": "dhash",
-                  "host_name": "https://nexus.test-3269.eencloud.com",
-                  "path_prefix": "api/v2/Debug/internal",
-                  "service_type": "esnBased"
-                }
-              ],
-              "move_phase_tasks": {
-                "dhash": {
-                  "request_id": "a4de2303-92fa-4335-93a4-05dfa92e3b6d",
-                  "_id": "87f23626-5e83-48f2-aa9a-44a97f440ae5",
-                  "phase_meta_id": "51d9a7aa-4e84-4021-9446-331d335f9906",
-                  "end_user_account_id": "00167857",
-                  "esn_based": true,
-                  "name": "dhash",
-                  "phase": "preMove",
-                  "svc_host_url": "https://nexus.test-3269.eencloud.com",
-                  "state": "",
-                  "svc_status": "",
-                  "signature": {
-                    "uuid": "87f23626-5e83-48f2-aa9a-44a97f440ae5",
-                    "name": "esn_based_move",
-                    "routingkey": "",
-                    "eta": null,
-                    "groupuuid": "",
-                    "grouptaskcount": 0,
-                    "args": [
-                      {
-                        "name": "",
-                        "type": "string",
-                        "value": "87f23626-5e83-48f2-aa9a-44a97f440ae5"
-                      },
-                      {
-                        "name": "",
-                        "type": "string",
-                        "value": "a4de2303-92fa-4335-93a4-05dfa92e3b6d"
-                      },
-                      {
-                        "name": "",
-                        "type": "string",
-                        "value": "https://nexus.test-3269.eencloud.com"
-                      },
-                      {
-                        "name": "",
-                        "type": "string",
-                        "value": "api/v2/Debug/internal"
-                      },
-                      {
-                        "name": "",
-                        "type": "string",
-                        "value": "esnBased"
-                      },
-                      {
-                        "name": "",
-                        "type": "string",
-                        "value": "podMove"
-                      },
-                      {
-                        "name": "",
-                        "type": "string",
-                        "value": "00167857"
-                      },
-                      {
-                        "name": "",
-                        "type": "string",
-                        "value": "00167856"
-                      },
-                      {
-                        "name": "",
-                        "type": "string",
-                        "value": "nrt1p1"
-                      },
-                      {
-                        "name": "",
-                        "type": "string",
-                        "value": "aus1p3"
-                      },
-                      {
-                        "name": "",
-                        "type": "string",
-                        "value": "c006"
-                      },
-                      {
-                        "name": "",
-                        "type": "string",
-                        "value": "c012"
-                      },
-                      {
-                        "name": "",
-                        "type": "string",
-                        "value": "preMove"
-                      },
-                      {
-                        "name": "",
-                        "type": "int64",
-                        "value": 10
-                      }
-                    ],
-                    "headers": {},
-                    "priority": 0,
-                    "immutable": false,
-                    "retrycount": 0,
-                    "retrytimeout": 0,
-                    "onsuccess": [],
-                    "onerror": [],
-                    "chordcallback": null,
-                    "brokermessagegroupid": "",
-                    "sqsreceipthandle": "",
-                    "stoptaskdeletiononerror": false,
-                    "ignorewhentasknotregistered": false
-                  },
-                  "results": [],
-                  "created_at": "0001-01-01T00:00:00Z",
-                  "progress": 0,
-                  "queue_time": "2024-10-08T07:21:31.109Z",
-                  "start_time": "0001-01-01T00:00:00Z",
-                  "total_esn_count": 3,
-                  "moved_esn_count": 0,
-                  "moved_esns": [],
-                  "failed_esns": [],
-                  "end_time": "0001-01-01T00:00:00Z",
-                  "p_status_updated_at": "0001-01-01T00:00:00Z"
-                },
-                "drivefs": {
-                  "request_id": "a4de2303-92fa-4335-93a4-05dfa92e3b6d",
-                  "_id": "c43ce12b-f35a-4096-9aa5-af7e145e5606",
-                  "phase_meta_id": "51d9a7aa-4e84-4021-9446-331d335f9906",
-                  "end_user_account_id": "00167857",
-                  "esn_based": false,
-                  "name": "drivefs",
-                  "phase": "preMove",
-                  "svc_host_url": "https://nexus.test-3269.eencloud.com",
-                  "state": "",
-                  "svc_status": "",
-                  "signature": {
-                    "uuid": "c43ce12b-f35a-4096-9aa5-af7e145e5606",
-                    "name": "account_based_move",
-                    "routingkey": "",
-                    "eta": null,
-                    "groupuuid": "",
-                    "grouptaskcount": 0,
-                    "args": [
-                      {
-                        "name": "",
-                        "type": "string",
-                        "value": "c43ce12b-f35a-4096-9aa5-af7e145e5606"
-                      },
-                      {
-                        "name": "",
-                        "type": "string",
-                        "value": "a4de2303-92fa-4335-93a4-05dfa92e3b6d"
-                      },
-                      {
-                        "name": "",
-                        "type": "string",
-                        "value": "https://nexus.test-3269.eencloud.com"
-                      },
-                      {
-                        "name": "",
-                        "type": "string",
-                        "value": "api/v2/Debug/internal"
-                      },
-                      {
-                        "name": "",
-                        "type": "string",
-                        "value": "accountBased"
-                      },
-                      {
-                        "name": "",
-                        "type": "string",
-                        "value": "podMove"
-                      },
-                      {
-                        "name": "",
-                        "type": "string",
-                        "value": "00167857"
-                      },
-                      {
-                        "name": "",
-                        "type": "string",
-                        "value": "00167856"
-                      },
-                      {
-                        "name": "",
-                        "type": "string",
-                        "value": "nrt1p1"
-                      },
-                      {
-                        "name": "",
-                        "type": "string",
-                        "value": "aus1p3"
-                      },
-                      {
-                        "name": "",
-                        "type": "string",
-                        "value": "c006"
-                      },
-                      {
-                        "name": "",
-                        "type": "string",
-                        "value": "c012"
-                      },
-                      {
-                        "name": "",
-                        "type": "string",
-                        "value": "preMove"
-                      },
-                      {
-                        "name": "",
-                        "type": "int64",
-                        "value": 10
-                      }
-                    ],
-                    "headers": {},
-                    "priority": 0,
-                    "immutable": false,
-                    "retrycount": 0,
-                    "retrytimeout": 0,
-                    "onsuccess": [],
-                    "onerror": [],
-                    "chordcallback": null,
-                    "brokermessagegroupid": "",
-                    "sqsreceipthandle": "",
-                    "stoptaskdeletiononerror": false,
-                    "ignorewhentasknotregistered": false
-                  },
-                  "results": [],
-                  "created_at": "0001-01-01T00:00:00Z",
-                  "progress": 0,
-                  "queue_time": "2024-10-08T07:21:31.141Z",
-                  "start_time": "0001-01-01T00:00:00Z",
-                  "total_esn_count": 0,
-                  "moved_esn_count": 0,
-                  "moved_esns": [],
-                  "failed_esns": [],
-                  "end_time": "0001-01-01T00:00:00Z",
-                  "p_status_updated_at": "0001-01-01T00:00:00Z"
-                }
-              },
-              "queue_time": "2024-10-08T07:21:31.109Z",
-              "start_time": "2024-10-08T07:21:31.144Z",
-              "end_time": "2024-10-08T07:22:02.399Z"
-            },
-            "transition": {
-              "request_id": "a4de2303-92fa-4335-93a4-05dfa92e3b6d",
-              "phase_meta_id": "01f0f4f3-1714-45b2-851d-dbb3add3e28d",
-              "end_user_account_meta_id": "131f1fa6-b44b-4edc-ae7f-6f91d3b0735d",
-              "phase": "transition",
-              "state": "success",
-              "move_task_args": {
-                "request_id": "a4de2303-92fa-4335-93a4-05dfa92e3b6d",
-                "src_account_id": "00167857",
-                "dest_account_id": "00167856",
-                "src_pod": "nrt1p1",
-                "dest_pod": "aus1p3",
-                "src_cluster": "c006",
-                "dest_cluster": "c012",
-                "phase": "transition",
-                "move_type": "podMove",
-                "grace_period_days": 10
-              },
-              "services": [
-                {
-                  "service_name": "dhash",
-                  "host_name": "https://nexus.test-3269.eencloud.com",
-                  "path_prefix": "api/v2/Debug/internal",
-                  "service_type": "esnBased"
-                }
-              ],
-              "move_phase_tasks": {
-                "dhash": {
-                  "request_id": "a4de2303-92fa-4335-93a4-05dfa92e3b6d",
-                  "_id": "5dbbcfa9-349c-4525-8b8d-9b1b744f3ed5",
-                  "phase_meta_id": "01f0f4f3-1714-45b2-851d-dbb3add3e28d",
-                  "end_user_account_id": "00167857",
-                  "esn_based": true,
-                  "name": "dhash",
-                  "phase": "transition",
-                  "svc_host_url": "https://nexus.test-3269.eencloud.com",
-                  "state": "",
-                  "svc_status": "",
-                  "signature": {
-                    "uuid": "5dbbcfa9-349c-4525-8b8d-9b1b744f3ed5",
-                    "name": "esn_based_move",
-                    "routingkey": "",
-                    "eta": null,
-                    "groupuuid": "",
-                    "grouptaskcount": 0,
-                    "args": [
-                      {
-                        "name": "",
-                        "type": "string",
-                        "value": "5dbbcfa9-349c-4525-8b8d-9b1b744f3ed5"
-                      },
-                      {
-                        "name": "",
-                        "type": "string",
-                        "value": "a4de2303-92fa-4335-93a4-05dfa92e3b6d"
-                      },
-                      {
-                        "name": "",
-                        "type": "string",
-                        "value": "https://nexus.test-3269.eencloud.com"
-                      },
-                      {
-                        "name": "",
-                        "type": "string",
-                        "value": "api/v2/Debug/internal"
-                      },
-                      {
-                        "name": "",
-                        "type": "string",
-                        "value": "esnBased"
-                      },
-                      {
-                        "name": "",
-                        "type": "string",
-                        "value": "podMove"
-                      },
-                      {
-                        "name": "",
-                        "type": "string",
-                        "value": "00167857"
-                      },
-                      {
-                        "name": "",
-                        "type": "string",
-                        "value": "00167856"
-                      },
-                      {
-                        "name": "",
-                        "type": "string",
-                        "value": "nrt1p1"
-                      },
-                      {
-                        "name": "",
-                        "type": "string",
-                        "value": "aus1p3"
-                      },
-                      {
-                        "name": "",
-                        "type": "string",
-                        "value": "c006"
-                      },
-                      {
-                        "name": "",
-                        "type": "string",
-                        "value": "c012"
-                      },
-                      {
-                        "name": "",
-                        "type": "string",
-                        "value": "transition"
-                      },
-                      {
-                        "name": "",
-                        "type": "int64",
-                        "value": 10
-                      }
-                    ],
-                    "headers": {},
-                    "priority": 0,
-                    "immutable": false,
-                    "retrycount": 0,
-                    "retrytimeout": 0,
-                    "onsuccess": [],
-                    "onerror": [],
-                    "chordcallback": null,
-                    "brokermessagegroupid": "",
-                    "sqsreceipthandle": "",
-                    "stoptaskdeletiononerror": false,
-                    "ignorewhentasknotregistered": false
-                  },
-                  "results": [],
-                  "created_at": "0001-01-01T00:00:00Z",
-                  "progress": 0,
-                  "queue_time": "2024-10-08T07:21:31.142Z",
-                  "start_time": "0001-01-01T00:00:00Z",
-                  "total_esn_count": 3,
-                  "moved_esn_count": 0,
-                  "moved_esns": [],
-                  "failed_esns": [],
-                  "end_time": "0001-01-01T00:00:00Z",
-                  "p_status_updated_at": "0001-01-01T00:00:00Z"
-                }
-              },
-              "queue_time": "2024-10-08T07:21:31.142Z",
-              "start_time": "2024-10-08T07:22:02.399Z",
-              "end_time": "2024-10-08T07:22:27.443Z"
-            },
-            "postMove": {
-              "request_id": "a4de2303-92fa-4335-93a4-05dfa92e3b6d",
-              "phase_meta_id": "b6c4d4ce-18e1-44e3-88dc-7ac3237d310f",
-              "end_user_account_meta_id": "131f1fa6-b44b-4edc-ae7f-6f91d3b0735d",
-              "phase": "postMove",
-              "state": "success",
-              "move_task_args": {
-                "request_id": "a4de2303-92fa-4335-93a4-05dfa92e3b6d",
-                "src_account_id": "00167857",
-                "dest_account_id": "00167856",
-                "src_pod": "nrt1p1",
-                "dest_pod": "aus1p3",
-                "src_cluster": "c006",
-                "dest_cluster": "c012",
-                "phase": "postMove",
-                "move_type": "podMove",
-                "grace_period_days": 10
-              },
-              "services": [
-                {
-                  "service_name": "dhash",
-                  "host_name": "https://nexus.test-3269.eencloud.com",
-                  "path_prefix": "api/v2/Debug/internal",
-                  "service_type": "esnBased"
-                }
-              ],
-              "move_phase_tasks": {
-                "dhash": {
-                  "request_id": "a4de2303-92fa-4335-93a4-05dfa92e3b6d",
-                  "_id": "0cd5e411-be7d-4f55-a1f0-030c8bf61f9f",
-                  "phase_meta_id": "b6c4d4ce-18e1-44e3-88dc-7ac3237d310f",
-                  "end_user_account_id": "00167857",
-                  "esn_based": true,
-                  "name": "dhash",
-                  "phase": "postMove",
-                  "svc_host_url": "https://nexus.test-3269.eencloud.com",
-                  "state": "",
-                  "svc_status": "",
-                  "signature": {
-                    "uuid": "0cd5e411-be7d-4f55-a1f0-030c8bf61f9f",
-                    "name": "esn_based_move",
-                    "routingkey": "",
-                    "eta": null,
-                    "groupuuid": "",
-                    "grouptaskcount": 0,
-                    "args": [
-                      {
-                        "name": "",
-                        "type": "string",
-                        "value": "0cd5e411-be7d-4f55-a1f0-030c8bf61f9f"
-                      },
-                      {
-                        "name": "",
-                        "type": "string",
-                        "value": "a4de2303-92fa-4335-93a4-05dfa92e3b6d"
-                      },
-                      {
-                        "name": "",
-                        "type": "string",
-                        "value": "https://nexus.test-3269.eencloud.com"
-                      },
-                      {
-                        "name": "",
-                        "type": "string",
-                        "value": "api/v2/Debug/internal"
-                      },
-                      {
-                        "name": "",
-                        "type": "string",
-                        "value": "esnBased"
-                      },
-                      {
-                        "name": "",
-                        "type": "string",
-                        "value": "podMove"
-                      },
-                      {
-                        "name": "",
-                        "type": "string",
-                        "value": "00167857"
-                      },
-                      {
-                        "name": "",
-                        "type": "string",
-                        "value": "00167856"
-                      },
-                      {
-                        "name": "",
-                        "type": "string",
-                        "value": "nrt1p1"
-                      },
-                      {
-                        "name": "",
-                        "type": "string",
-                        "value": "aus1p3"
-                      },
-                      {
-                        "name": "",
-                        "type": "string",
-                        "value": "c006"
-                      },
-                      {
-                        "name": "",
-                        "type": "string",
-                        "value": "c012"
-                      },
-                      {
-                        "name": "",
-                        "type": "string",
-                        "value": "postMove"
-                      },
-                      {
-                        "name": "",
-                        "type": "int64",
-                        "value": 10
-                      }
-                    ],
-                    "headers": {},
-                    "priority": 0,
-                    "immutable": false,
-                    "retrycount": 0,
-                    "retrytimeout": 0,
-                    "onsuccess": [],
-                    "onerror": [],
-                    "chordcallback": null,
-                    "brokermessagegroupid": "",
-                    "sqsreceipthandle": "",
-                    "stoptaskdeletiononerror": false,
-                    "ignorewhentasknotregistered": false
-                  },
-                  "results": [],
-                  "created_at": "0001-01-01T00:00:00Z",
-                  "progress": 0,
-                  "queue_time": "2024-10-08T07:21:31.142Z",
-                  "start_time": "0001-01-01T00:00:00Z",
-                  "total_esn_count": 3,
-                  "moved_esn_count": 0,
-                  "moved_esns": [],
-                  "failed_esns": [],
-                  "end_time": "0001-01-01T00:00:00Z",
-                  "p_status_updated_at": "0001-01-01T00:00:00Z"
-                }
-              },
-              "queue_time": "2024-10-08T07:21:31.142Z",
-              "start_time": "2024-10-08T07:22:27.443Z",
-              "end_time": "2024-10-08T07:22:59.501Z"
-            },
-            "move": {
-              "request_id": "a4de2303-92fa-4335-93a4-05dfa92e3b6d",
-              "phase_meta_id": "7dc5bab1-6229-4727-b889-445798a89b29",
-              "end_user_account_meta_id": "131f1fa6-b44b-4edc-ae7f-6f91d3b0735d",
-              "phase": "move",
-              "state": "started",
               "move_task_args": {
                 "request_id": "a4de2303-92fa-4335-93a4-05dfa92e3b6d",
                 "src_account_id": "00167857",
@@ -1529,67 +1576,85 @@
     const ractive = new Ractive({
       target: '#data-logger',
       template: `
-          <div class="content">
-              {{#if Object.keys(end_user_account_meta_tasks).length > 0}}
-                  <ul>
-                      {{#each end_user_account_meta_tasks:key}}
-                          <h1>
-                              <h3 class="is-size-5 has-text-primary {{#if state == 'success'}} bg-primary {{else}} bg-danger {{/if}}" on-click="@this.showPhase(key)">
-                                  {{key}}
-                              </h3>
-                              {{#if visiblePhases[key]}}
-                                  <ul>
-                                      {{#each phase_meta_tasks:phase}}
-                                          <li class="phase" on-click="@this.toggleServices(key, phase)">
-                                              <h4 class="is-size-6 has-text-primary">{{phase}}</h4>
-                                              {{#if visibleServices[key][phase]}}
-                                                  <ul>
-                                                      {{#each services}}
-                                                          <li class="service">
-                                                              <h5 class="is-size-7 has-text-primary">{{service_name}}</h5>
-                                                              <p>{{host_name}}/{{path_prefix}}</p>
-                                                          </li>
-                                                      {{/each}}
-                                                  </ul>
-                                              {{/if}}
-                                          </li>
-                                      {{/each}}
-                                  </ul>
-                              {{/if}}
-                          </h1>
+        <div class="content">
+          {{#if Object.keys(end_user_account_meta_tasks).length > 0}}
+            <ul>
+              {{#each end_user_account_meta_tasks:key}}
+                <h1>
+                  <h3 class="is-size-5 account {{state === 'success' ? 'bg-success' : state === 'running' ? 'bg-warning' : state === 'failure' ? 'bg-danger' : state === 'started' ? 'bg-info' : 'bg-grey'}} "  on-click="@this.showPhase(key)">
+                   Account:  {{key}}
+                  </h3>
+                  {{#if visiblePhases[key]}}
+                    <ul>
+                      {{#each phase_meta_tasks:phase}}
+                        <li 
+                          class="phase {{state === 'success' ? 'bg-success' : state === 'running' ? 'bg-warning' : state === 'failure' ? 'bg-danger' : state === 'started' ? 'bg-info' : 'bg-grey'}} 
+                          is-rounded p-3 mb-3"
+                          on-mouseenter="@this.set('hoveredPhase', { key: key, phase: phase })"
+                          on-mouseleave="@this.set('hoveredPhase', null)"
+                          on-click="@this.toggleServices(key, phase)">
+    
+                          <h4 class="is-size-6">
+                            {{phase}}
+    
+                            <!-- Show the state when hovered -->
+                            {{#if hoveredPhase && hoveredPhase.key === key && hoveredPhase.phase === phase}}
+                              <span class="ml-2">(status: {{state}})</span>
+                            {{/if}}
+                          </h4>
+    
+                          {{#if visibleServices[key][phase]}}
+                            <ul>
+                              {{#each services}}
+                                <li class="service is-rounded p-2 mb-2">
+                                  <h5 class="is-size-7">{{service_name}}</h5>
+                                  <p>{{host_name}}/{{path_prefix}}</p>
+                                </li>
+                              {{/each}}
+                            </ul>
+                          {{/if}}
+                        </li>
                       {{/each}}
-                  </ul>
-              {{else}}
-                  <p>No tasks available.</p>
-              {{/if}}
-          </div>
+                    </ul>
+                  {{/if}}
+                </h1>
+              {{/each}}
+            </ul>
+          {{else}}
+            <p>No tasks available.</p>
+          {{/if}}
+        </div>
       `,
       data: {
-          end_user_account_meta_tasks: {},
-          visiblePhases: {},
-          visibleServices: {}
+        end_user_account_meta_tasks: {},
+        visiblePhases: {},
+        visibleServices: {},
+        hoveredPhase: null  // Track hovered phase
       },
       showPhase(key) {
-          const visiblePhases = this.get('visiblePhases');
-          visiblePhases[key] = !visiblePhases[key];
-          this.set('visiblePhases', visiblePhases);
-          
-          if (!this.get('visibleServices')[key]) {
-              this.set('visibleServices', { ...this.get('visibleServices'), [key]: {} });
-          }
+        const visiblePhases = this.get('visiblePhases');
+        visiblePhases[key] = !visiblePhases[key];
+        this.set('visiblePhases', visiblePhases);
+    
+        if (!this.get('visibleServices')[key]) {
+          this.set('visibleServices', { ...this.get('visibleServices'), [key]: {} });
+        }
       },
       toggleServices(key, phase) {
-          const visibleServices = this.get('visibleServices');
-          if (!visibleServices[key]) {
-              visibleServices[key] = {};
-          }
-          visibleServices[key][phase] = !visibleServices[key][phase];
-          this.set('visibleServices', visibleServices);
+        const visibleServices = this.get('visibleServices');
+        if (!visibleServices[key]) {
+          visibleServices[key] = {};
+        }
+        visibleServices[key][phase] = !visibleServices[key][phase];
+        this.set('visibleServices', visibleServices);
       }
-  });
-  
-  ractive.set('end_user_account_meta_tasks', customdata.end_user_account_meta_tasks);
-  
+    });
+    
+    // Set data to Ractive
+    ractive.set('end_user_account_meta_tasks', customdata.end_user_account_meta_tasks);
+    
+    
+    
   </script>
   
 
