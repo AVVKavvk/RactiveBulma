@@ -108,7 +108,7 @@
               <h1>
                 <h3 
                   class="is-size-5 account {{state === 'success' ? 'bg-success' : state === 'running' ? 'bg-warning' : state === 'failure' ? 'bg-danger' : 'bg-grey'}}"  
-                  on-click="@this.showPhase(key)">
+                  on-click="@this.togglePhase(key)">
   
                   Account: {{key}}
                   <span class="ml-2 is-size-6 has-text-info is-pulled-right">{{state}}</span>
@@ -176,8 +176,9 @@
         visibleServices: {},
         visibleServiceDetails: {},
       },
-      showPhase(key) {
+      togglePhase(key) {
         const visiblePhases = this.get('visiblePhases');
+        console.log('visiblePhases:', visiblePhases);
         visiblePhases[key] = !visiblePhases[key];
         this.set('visiblePhases', visiblePhases);
 
@@ -187,6 +188,7 @@
       },
       toggleServices(key, phase) {
         const visibleServices = this.get('visibleServices');
+        console.log('visibleServices:', visibleServices);
         if (!visibleServices[key]) {
           visibleServices[key] = {};
         }
@@ -203,7 +205,7 @@
         if (!visibleServiceDetails[key][phase]) {
           visibleServiceDetails[key][phase] = {};
         }
-
+        console.log('visibleServiceDetails:', visibleServiceDetails);
         visibleServiceDetails[key][phase][service_index] = !visibleServiceDetails[key][phase][service_index];
         this.set('visibleServiceDetails', visibleServiceDetails);
       }
@@ -212,7 +214,7 @@
     fetch('./dummyAccount.json')
     .then(response => response.json())
     .then(data => {
-      console.log('Loaded data:', data);
+      //console.log('Loaded data:', data);
       ractive.set('end_user_account_meta_tasks', data.end_user_account_meta_tasks);
     })
     .catch(error => console.error('Error loading JSON:', error));
