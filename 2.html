@@ -7,29 +7,25 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
   <title>Account Phases and Services</title>
   <style>
-    .account-wrapper {
+    .move-account-wrapper {
       margin-bottom: 15px;
     }
 
-    .account {
+    .move-account {
       margin-bottom: 2rem;
       cursor: pointer;
     }
 
-    .phase {
+    .move-phase {
       margin-left: 2rem;
       margin-bottom: 1rem;
       cursor: pointer;
     }
 
-    .service {
+    .move-service {
       margin-left: 6rem;
       margin-bottom: 0.5rem;
       cursor: pointer;
-    }
-
-    .bg-success {
-      background-color: #28a745;
     }
 
     li {
@@ -38,45 +34,45 @@
       padding: 0;
     }
 
-    .bg-success {
+    .move-bg-success {
       background-color: #59e078;
       border-radius: 10px;
       padding: 10px;
       margin-bottom: 10px;
     }
 
-    .bg-warning {
+    .move-bg-warning {
       background-color: #e1c05b;
       border-radius: 10px;
       padding: 10px;
       margin-bottom: 10px;
     }
 
-    .bg-danger {
+    .move-bg-danger {
       background-color: #e94d5c;
       border-radius: 10px;
       padding: 10px;
       margin-bottom: 10px;
     }
 
-    .bg-info {
+    .move-bg-info {
       background-color: #b1b5b6;
       border-radius: 10px;
       padding: 10px;
       margin-bottom: 10px;
     }
 
-    .bg-grey {
+    .move-bg-grey {
       background-color: #9ea2a4;
       border-radius: 10px;
       padding: 10px;
       margin-bottom: 10px;
     }
 
-    .account:hover {
+    .move-account:hover {
       cursor: pointer;
     }
-    .box1 {
+    .move-box {
       margin: 10px;
       padding-top: 10px;
       padding-right: 10px;
@@ -104,10 +100,10 @@
       {{#if Object.keys(end_user_account_meta_tasks).length > 0}}
         <ul>
           {{#each end_user_account_meta_tasks:key}}
-            <div class="account-wrapper">
+            <div class="move-account-wrapper">
               <h1>
                 <h3 
-                  class="is-size-5 account {{state === 'success' ? 'bg-success' : state === 'running' ? 'bg-warning' : state === 'failure' ? 'bg-danger' : 'bg-grey'}}"  
+                  class="is-size-5 move-account {{state === 'success' ? 'move-bg-success' : state === 'running' ? 'move-bg-warning' : state === 'failure' ? 'move-bg-danger' : 'move-bg-grey'}}"  
                   on-click="@this.togglePhase(key)">
   
                   Account: {{key}}
@@ -118,9 +114,9 @@
                 {{#if visiblePhases[key]}}
                   <ul >
                     {{#each phase_meta_tasks:phase}}
-                      <div class="box1">
+                      <div class="move-box">
                         <li 
-                        class="phase py-2 {{state === 'success' ? 'bg-success' : state === 'running' ? 'bg-warning' : state === 'failure' ? 'bg-danger' : 'bg-grey'}} "
+                        class="move-phase py-2 {{state === 'success' ? 'move-bg-success' : state === 'running' ? 'move-bg-warning' : state === 'failure' ? 'move-bg-danger' : 'move-bg-grey'}} "
                         on-click="@this.toggleServices(key, phase)">
       
                         <h4 class="is-size-6 ">
@@ -132,7 +128,7 @@
                       {{#if visibleServices[key][phase]}}
                           <h1 class="is-size-5 has-text-centered">Move Phase Tasks :</h1>
                           {{#each move_phase_tasks:service}}
-                            <li class="service is-rounded p-2 mb-2 {{svc_status === 'success' ? 'bg-success' : svc_status === 'running' ? 'bg-warning' : svc_status === 'failure' ? 'bg-danger' : 'bg-grey'}}" on-click="@this.toggleServiceDetails(key, phase, service)">
+                            <li class="move-service is-rounded p-2 mb-2 {{svc_status === 'success' ? 'move-bg-success' : svc_status === 'running' ? 'move-bg-warning' : svc_status === 'failure' ? 'move-bg-danger' : 'move-bg-grey'}}" on-click="@this.toggleServiceDetails(key, phase, service)">
                               <h5 class="is-size-5 has-text-grey-dark ">
                                 {{service}}
                                 <span class="ml-2 is-size-6 has-text-info is-pulled-right">{{svc_status}}</span>
